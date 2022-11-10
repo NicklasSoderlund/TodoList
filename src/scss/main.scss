@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+}
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: gray;
+    background-image: url(/src/assets/flowers-g93764c6c9_1920.jpg);
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center; 
+    background-size: cover;
+    background-position:50% 50%; 
+    width: 100vw;
+    overflow-x: hidden;
+}
+#Todo-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0;
+}
+.todoObject {
+    border: black solid 2px;
+    width: 250px;
+    height: 250px;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    background-color: #de4949;
+    border-radius: 5%;
+}
+
+ #whatToDo {
+    list-style-type: none;
+    font-weight: 700;
+    font-size: 1.3em;
+    width: 80%;
+    text-align: center;
+}
+ 
+.markAsFinished {
+    list-style-type: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: #1a5c0e;
+    border: 2px solid black;
+    padding: 5px;
+    display: flex;
+    width: fit-content;
+    text-align: center;
+}
+h3 {
+    text-align: center;
+    font-size: 3em;
+    background-color: salmon;
+    width: fit-content;
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+#finished-tasks {
+    display: flex;
+    justify-content: space-around;
+    font-weight: 600;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: auto;
+    padding-left: 0;
+
+    .finishedTodoObject {
+        border: black solid 2px;
+        width: 250px;
+        height: 250px;
+        margin: 2em auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 500;
+        background-color: green;
+        border-radius: 5%;
+        #finishedWhatToDo {
+            list-style-type: none;
+            font-weight: 700;
+            font-size: 1.3em;
+            width: 80%;
+            text-align: center;
+        }
+        #undoButton {
+            background-color: burlywood;
+        }
+        #deleteButton {
+            background-color: red;
+        }
+    }
+
+}
+
+.no-list {
+    list-style-type: none;
+    display: flex;
+    gap: 15%;
+    align-items: center;
+
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    width: 20%;
+    height: 350px;
+    text-align: center;
+    justify-content: space-between;
+    margin: 2em auto;
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: bisque;
+}
+
+#arrows {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    cursor: pointer;
+    li {
+        width: 30%;
+        font-weight: 600;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+label {
+    font-size: larger;  
+}
