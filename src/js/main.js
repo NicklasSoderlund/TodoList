@@ -57,9 +57,7 @@ function refreshList() {
      
         markAsFinished.addEventListener("click", () => {
             finishedTasksContainer.innerHTML = "";
-            console.log([index]);
             todoList[i].finishedToggle = true;
-            console.log(todoList[i]);
 
             let currentObject = todoList[i];
             let currentObjectIndex = todoList.indexOf(currentObject);
@@ -67,7 +65,6 @@ function refreshList() {
         
               refreshList();
            
-            
         });
         
         newUl.appendChild(markAsFinished);
@@ -84,17 +81,17 @@ function refreshList() {
             let currentObject = todoList[i];
             let currentObjectIndex = todoList.indexOf(currentObject);
               
-            //Bug Fix
+              //Bug Fix
             if(currentObjectIndex === 0) {
-               return false;
+               return false; 
 
             } 
-            else {
-            moveTo = currentObjectIndex - 1;
-            todoList.splice(currentObjectIndex, 1);
-            todoList.splice(moveTo, 0, currentObject);
-            refreshList();  
-        }   
+            else { 
+             moveTo = currentObjectIndex - 1;
+             todoList.splice(currentObjectIndex, 1);
+             todoList.splice(moveTo, 0, currentObject);
+             refreshList();  
+         }    
 
      }); 
         arrowRightLi.addEventListener("click", () => {
@@ -104,10 +101,14 @@ function refreshList() {
 
             let toTheRight = currentObjectIndex + 1;
 
-            if(todoList[toTheRight].finishedToggle === true) {
-                return;
+                // Bug fixes
+            if(todoList[toTheRight] === undefined) {
+                return false;
             }
-
+            if(todoList[toTheRight].finishedToggle === true) {
+                return false;
+            }
+           
 
             moveTo = currentObjectIndex +1;
             todoList.splice(currentObjectIndex, 1,);
@@ -126,8 +127,7 @@ function refreshList() {
     localStorage.setItem("todoList",JSON.stringify(todoList));
 
  for(let i=0; i<todoList.length; i++) {
-
-    
+ 
 
   if(todoList[i].finishedToggle === true) {
                 
